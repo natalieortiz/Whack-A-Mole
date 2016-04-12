@@ -8,6 +8,7 @@ $(document).ready(function(){
 	var countdown;
 	var timer;
 	var highscore = 0;
+	var delay = 1000;
 	var woof = new Audio('/audio/woof.mp3');
 	var bark = new Audio('/audio/bark.wav');
 	var whistle = new Audio('/audio/whistle.wav');
@@ -54,16 +55,17 @@ $(document).ready(function(){
 			whistle.play();
 			if (counter > highscore){
 				$('#high_score').html(counter);
+				$('#myModal').modal('show');
 			}
         } else if (timer > 0) {
             $('#timer').html(timer);
+            delay = delay - 200;
         }
         timer--;
     }
 	
 	//Handles the game play using intervals. 
 	function flashDogs (){
-		var delay = 1000;
 		counter = 0;
 		interval1 = setInterval(function(event){
 			removeWeenie();
@@ -72,7 +74,6 @@ $(document).ready(function(){
 		interval2 = setInterval(function(event){
 			randomize();
 			addWeenie();
-			delay = delay - 500;
 		},delay*1.5);
 	}
 
@@ -101,10 +102,6 @@ $(document).ready(function(){
 	function tallyScore(){
 		$('#scoreKeeper').html(counter);
 	}
-
-	$('#modal_button').click(function(event){
-		$('#myModal').modal(options);
-	})
 
 	
 });
