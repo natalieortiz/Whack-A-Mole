@@ -1,0 +1,65 @@
+#area {
+	width: 450px;
+	height: 450px;
+	background: rgba(255,255,255,.5);
+	margin: auto;
+}
+
+.background {
+	background: url(/img/backyard.jpg) no-repeat fixed;
+}
+
+.doghouse {
+	margin-top: 200px;
+	margin-right: 10px;
+}
+.heading {
+	text-align: center;
+	color: white;
+	margin-bottom: 20px;
+	font-family: 'Acme', sans-serif;
+	font-size: 20px;
+}
+.heading h1{
+	font-size: 48px;
+}
+.hole{
+	width: 150px;
+	height: 150px;
+	border: dotted 1px;
+	border-color: light grey;
+	float: left;
+}
+
+.add_weenie{
+	background: url(/img/dachshund.png) no-repeat center;
+}
+
+.score{
+	margin-top: 150px;
+	padding-top: 5px; 
+	text-align: center;
+	width: 150px;
+	height: 120px;
+	color: white;
+	background: rgb(48,144,192);
+	border-radius: 5px;	
+	border: solid 4px rgb(255,192,36);
+}
+
+.scorekeeper{
+	font-size: 1.5em;
+}
+
+.start{
+	margin-top: 35px;
+	margin-left: 15px;
+	width: 150px;
+}
+
+.quit{
+	margin-top: 10px;
+	margin-left: 15px;
+	width: 150px;
+}
+
