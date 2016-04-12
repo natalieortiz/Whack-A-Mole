@@ -1,9 +1,61 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Whack-a-Mole</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<link href='https://fonts.googleapis.com/css?family=Bangers|Acme|Permanent+Marker' rel='stylesheet' type='text/css'>
+	<style type="text/css"></style>
+	<link rel="stylesheet" href="/css/whack-css.css">
+	<link rel="stylesheet" href="/js/jquery-ui.min.css">
 </head>
-<body>
+<body class="background">
+<div class="container">
+	<div class="row">
+		<div class="heading">
+			<h1>Whack-a-Weenie</h1>
+			<p>(weenie dog!)</p>
+		</div>	
+	</div>
+	<div class="row">
+		<div class="col-md-3">
+			<div class="row">
+				<button type="button" class="btn btn-primary btn-lg btn-success start" id="start">Start Game</button>
+			</div>
+			<div class="row">
+				<button type="button" class="btn btn-primary btn-lg btn-danger quit" id="quit">Quit Game</button>
+			</div>
+			<div class="score">
+				<h3>Score</h3>
+				<div class="scorekeeper" id="scoreKeeper">0</div>
+			</div>
+		</div>
+		<div class="col-md-6">
+			<div id="area">
+					<div class="hole" id="1"></div>
+					<div class="hole" id="2"></div>
+					<div class="hole" id="3"></div>
+					<div class="hole" id="4"></div>
+					<div class="hole" id="5"></div>
+					<div class="hole" id="6"></div>
+					<div class="hole" id="7"></div>
+					<div class="hole" id="8"></div>
+					<div class="hole" id="9"></div>
+			</div>
+		</div>
+		<div class="col-md-3">
+			<div class="doghouse"><img src="/img/dog house.png"></div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-8">
+		</div>
+	</div>
+</div>
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="/js/external/jquery/jquery.js"></script>
+<script src="/js/jquery-ui.min.js"></script>
+<script src="/js/whackamole.js"></script>
 
 </body>
 </html>
