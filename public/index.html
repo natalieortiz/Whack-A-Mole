@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Whack-a-Mole</title>
+	<title>Whack-a-Weenie</title>
 	<meta charset="utf-8">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 	<link href='https://fonts.googleapis.com/css?family=Bangers|Acme|Permanent+Marker' rel='stylesheet' type='text/css'>
@@ -9,7 +9,26 @@
 	<link rel="stylesheet" href="/css/whack-css.css">
 	<link rel="stylesheet" href="/js/jquery-ui.min.css">
 </head>
-<body class=>
+<body>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header modal_style">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="myModal"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Weenies!</h4>
+      </div>
+      <div class="modal-body">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/VOcBI-fbDVo" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <div class="modal-footer modal_style">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- body html -->
 <div class="container-fluid background">
 	<div class="row">
 		<div class="heading">
@@ -50,7 +69,14 @@
 			</div>
 		</div>
 		<div class="col-md-3">
-			<div class="high_score"></div>
+		<!-- Button trigger modal -->
+		<button type="button" class="btn btn-primary btn-lg modal_button" data-toggle="modal" data-target="#myModal" id="modal_button">
+		  Dog Video!
+		</button>
+			<div class="high_score">
+				<h3>High Score</h3>
+				<div id="high_score"></div>
+			</div>
 			<div class="doghouse"><img src="/img/dog house.png"></div>
 		</div>
 	</div>
@@ -59,9 +85,11 @@
 		</div>
 	</div>
 </div>
+<!-- Latest compiled and minified JavaScript -->
 <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 <script src="/js/external/jquery/jquery.js"></script>
 <script src="/js/jquery-ui.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 <script src="/js/whackamole.js"></script>
 
 </body>
