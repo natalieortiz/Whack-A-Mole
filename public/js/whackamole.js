@@ -2,48 +2,59 @@
 "use strict"
 $(document).ready(function(){
 	var hole;
-	var counter = 0; // keeps track of user score.
-	var interval1; //for first interval in gamePlay
-	var interval2;	//for second interval in gamePlay
-	var timer = 30;
-	var highscores = [];
+	var counter; // keeps track of user score.
+	var interval1; //for first interval in flashDogs
+	var interval2;	//for second interval in flashDogs
+	var countdown;
+	var timer;
+	var highscore = 0;
+	var woof = new Audio('/audio/woof.mp3');
+	var bark = new Audio('/audio/bark.wav');
+	var whistle = new Audio('/audio/whistle.wav');
+
 
 	//get random hole.  Holes are numbered 1 - 9.
 	function randomize (){
 		hole = Math.floor(Math.random()* 9)+1;
-		console.log(hole);
 	}
 	
 	//add Weenie to random hole. 
 	function addWeenie (){
 		$("#"+ hole).addClass("add_weenie");
-		console.log("add dog");
 	}
 
 	//removes the weenie dog from the selected hole. 
 	function removeWeenie(){
 		$("#"+ hole).removeClass("add_weenie");
-		console.log("remove dog");
 	}
 
 	//Start game button
 	$('#start').click(function(event){
-		var countdown = setInterval(updateTimer, 1000);
-		counter = 0;
-		gamePlay();
+		timer = 30;
+		$("#area").on("click", userPlay);
+		countdown = setInterval(updateTimer, 1000);
+		flashDogs();
+		$('#scoreKeeper').html(counter);
 	})
 
 	//Quit game button
 	$('#quit').click(function(event){
     	removeWeenie();
 		stopPlay();
+		$("#area").off("click", userPlay);
 	})
 
+	//Countdown timer.
     function updateTimer()
-    {
+    {	
         if (timer == 0) {
         	stopPlay();
 			$('#timer').html(timer);
+			$("#area").off("click", userPlay);
+			whistle.play();
+			if (counter > highscore){
+				$('#high_score').html(counter);
+			}
         } else if (timer > 0) {
             $('#timer').html(timer);
         }
@@ -51,25 +62,31 @@ $(document).ready(function(){
     }
 	
 	//Handles the game play using intervals. 
-	function gamePlay (){
+	function flashDogs (){
 		var delay = 1000;
+		counter = 0;
 		interval1 = setInterval(function(event){
 			removeWeenie();
 		},delay);
+
 		interval2 = setInterval(function(event){
 			randomize();
 			addWeenie();
-			console.log(timer);
-			delay = delay - 100;
+			delay = delay - 500;
 		},delay*1.5);
-		//Listens for user clicks and counts and adds score. 
-		$('#area').click(function(event){
-			var target = $(event.target).attr('id');
-			if (target == hole){
-				counter++;
-				tallyScore(counter);
-			}
-		});
+	}
+
+
+	function userPlay(){
+		var target = $(event.target).attr('id');
+		if (target == hole){
+			bark.play();
+			counter++;
+			console.log(counter);
+			tallyScore();
+		} else {
+			woof.play();	
+		}
 	}
 
 	//To clear out the intervals running. 
@@ -77,12 +94,17 @@ $(document).ready(function(){
 		removeWeenie();
     	clearInterval(interval1);
     	clearInterval(interval2);
+    	clearInterval(countdown);
 	}
 
 	//Keeps track of your current streak.
 	function tallyScore(){
 		$('#scoreKeeper').html(counter);
 	}
+
+	$('#modal_button').click(function(event){
+		$('#myModal').modal(options);
+	})
 
 	
 });
