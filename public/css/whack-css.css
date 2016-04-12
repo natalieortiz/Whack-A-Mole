@@ -35,11 +35,11 @@
 	background: url(/img/dachshund.png) no-repeat center;
 }
 
-.score{
+.display {
 	margin-top: 150px;
-	padding-top: 5px; 
+	margin-left: 20px;
 	text-align: center;
-	width: 150px;
+	width: 210px;
 	height: 120px;
 	color: white;
 	background: rgb(48,144,192);
@@ -47,19 +47,32 @@
 	border: solid 4px rgb(255,192,36);
 }
 
+.high_score {
+	margin-top: 150px;
+	text-align: center;
+	width: 210px;
+	height: 120px;
+	color: white;
+	background: rgb(48,144,192);
+	border-radius: 5px;	
+	border: solid 4px rgb(255,192,36);
+}
+.score {
+	float: left;
+	width: 100px;
+	text-align: center;
+}
 .scorekeeper{
-	font-size: 1.5em;
+	font-size: 2em;
+}
+.timer{
+	font-size: 2em;
 }
 
-.start{
-	margin-top: 35px;
-	margin-left: 15px;
-	width: 150px;
-}
-
-.quit{
+.player_button {
 	margin-top: 10px;
-	margin-left: 15px;
+	margin-left: 35px;
 	width: 150px;
 }
+
 
