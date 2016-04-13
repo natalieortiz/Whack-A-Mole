@@ -1,6 +1,4 @@
-.active{
-	
-}
+
 .add_weenie{
 	background: url(/img/dachshund.png) no-repeat center;
 }
@@ -48,13 +46,6 @@
 	font-size: 48px;
 }
 
-.hole{
-	width: 150px;
-	height: 150px;
-	border: dotted 1px;
-	border-color: light grey;
-	float: left;
-}
 
 .high_score {
 	margin-top: 25px;
@@ -65,6 +56,18 @@
 	background: rgb(48,144,192);
 	border-radius: 5px;	
 	border: solid 4px rgb(255,192,36);
+}
+
+#high_score{
+	font-size: 2em;
+}
+
+.hole{
+	width: 150px;
+	height: 150px;
+	border: dotted 1px;
+	border-color: light grey;
+	float: left;
 }
 
 .modal_style{
@@ -92,8 +95,5 @@
 	font-size: 2em;
 }
 .timer{
-	font-size: 2em;
-}
-#high_score{
 	font-size: 2em;
 }
