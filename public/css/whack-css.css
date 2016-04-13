@@ -1,9 +1,8 @@
 .active{
-
+	
 }
 .add_weenie{
 	background: url(/img/dachshund.png) no-repeat center;
-	height: 100%;
 }
 
 #area {
@@ -30,10 +29,13 @@
 }
 
 .doghouse {
-	margin-top: 130px;
+	margin-top: 100px;
 	margin-right: 10px;
 	margin-bottom: 30px;
 
+}
+.grass{
+	height: 30px;
 }
 .heading {
 	text-align: center;
@@ -65,17 +67,15 @@
 	border: solid 4px rgb(255,192,36);
 }
 
-.font_sizer {
-	font-size: 2em;
-}
-
 .modal_style{
 	color: rgb(48,144,192);
 	font-family: 'Acme', sans-serif;
 	text-align: center;
 }
-.modal_style h4{
-	font-size: 1.5em;
+
+.modal_button{
+	margin-left: 40px;
+	margin-bottom: 20px;
 }
 
 .player_button {
@@ -94,5 +94,6 @@
 .timer{
 	font-size: 2em;
 }
-
-
+#high_score{
+	font-size: 2em;
+}
