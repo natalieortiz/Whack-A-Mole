@@ -8,8 +8,7 @@ $(document).ready(function(){
 	var countdown;
 	var timer;
 	var highscore = 0;
-	var delay = 1000;
-	var woof = new Audio('/audio/woof.mp3');
+	var woof = new Audio('/audio/woof1.mp3');
 	var bark = new Audio('/audio/bark.wav');
 	var whistle = new Audio('/audio/whistle.wav');
 
@@ -32,6 +31,7 @@ $(document).ready(function(){
 	//Start game button
 	$('#start').click(function(event){
 		timer = 30;
+		//activates game area for user click. 
 		$("#area").on("click", userPlay);
 		countdown = setInterval(updateTimer, 1000);
 		flashDogs();
@@ -55,17 +55,18 @@ $(document).ready(function(){
 			whistle.play();
 			if (counter > highscore){
 				$('#high_score').html(counter);
-				$('#myModal').modal('show');
+				//shows video for high score. 
+				$("#dogModal").modal("show");
 			}
         } else if (timer > 0) {
             $('#timer').html(timer);
-            delay = delay - 200;
         }
         timer--;
     }
 	
 	//Handles the game play using intervals. 
 	function flashDogs (){
+		var delay = 700;
 		counter = 0;
 		interval1 = setInterval(function(event){
 			removeWeenie();
@@ -77,7 +78,7 @@ $(document).ready(function(){
 		},delay*1.5);
 	}
 
-
+	//Compares user clicks with randomly selected hole. 
 	function userPlay(){
 		var target = $(event.target).attr('id');
 		if (target == hole){
@@ -102,6 +103,7 @@ $(document).ready(function(){
 	function tallyScore(){
 		$('#scoreKeeper').html(counter);
 	}
+
 
 	
 });
